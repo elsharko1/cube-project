@@ -1,0 +1,47 @@
+package com.company;
+
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        int storage = 0;
+        String userNum = "";
+
+	    System.out.println("Please enter a number: ");
+        userNum = scnr.nextLine();
+
+        int a = 0;
+        try{
+          a = Integer.parseInt(userNum);
+        }
+        catch (Exception e) {
+            System.out.println("Nice try, please enter a valid number.");
+        }
+
+        try {
+            int b = userNum.length();
+            int c = 0;
+            while (c < b) {
+                int convert = Integer.parseInt(userNum.substring(c, c + 1));
+                storage = storage + (convert * convert * convert);
+
+                c++;
+            }
+
+            if (storage == a) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
+
+        }catch(Exception e2){}
+
+
+
+
+
+    }
+}
